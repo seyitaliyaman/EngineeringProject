@@ -1,0 +1,26 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a class="navbar-brand logo-image"  href="#/pages/timeline"><img class="img-responsive" src="../../../../assets/camera.png"></a>
+  </div>
+</div>
+
+<div class="header-container">
+  <a (click)="addPost()" style="margin-right: 20%;">
+    <i class="fas fa-photo-video"></i>
+  </a>
+
+
+  <a (click)="search()">
+    <nb-icon icon="search"></nb-icon>
+  </a>
+  
+  <nb-actions size="small">
+    <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
+      <nb-user [nbContextMenu]="userMenu"
+               [onlyPicture]="userPictureOnly"
+               [name]="user?.name"
+               [picture]="user?.picture">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

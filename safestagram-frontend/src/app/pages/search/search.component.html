@@ -1,0 +1,30 @@
+
+<mat-card class="example-card">
+
+    <mat-card-header>
+        <mat-form-field class="example-form-field">
+            <mat-label>Search</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            <button  *ngIf="value"  matSuffix mat-icon-button aria-label="Clear" (click)="search()">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+    </mat-card-header>
+
+</mat-card>
+
+
+<div *ngIf="isResult">
+
+  <mat-card class="example-card" *ngFor="let profile of smallProfile">
+    <mat-card-header >
+      <div mat-card-avatar style="background-size: cover;" [ngStyle]="{'background-image':'url('+profile.profilePhotoUrl+')'}"></div>
+      <mat-card-title>{{profile.username}}</mat-card-title>
+      <button mat-button style="margin-left: auto;" (click)="follow(profile.id)">Follow</button>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+
+  </mat-card>
+</div>
+

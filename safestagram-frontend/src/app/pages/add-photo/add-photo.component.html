@@ -1,0 +1,22 @@
+<mat-card class="example-card" >
+    <mat-card-header style="margin-bottom: 5%;">
+        <input type="file" (change)="selectFile($event)">
+    </mat-card-header>
+    <img mat-card-image [src]="url" *ngIf="url">
+    <mat-card-content>
+        <form [formGroup]="form">
+            <mat-form-field style="width: 100%;">
+                <mat-label>Description</mat-label>
+                <textarea formControlName="description"
+                          matInput
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="5"></textarea>
+              </mat-form-field>
+        </form>  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="addPhoto()">SHARE</button>
+    </mat-card-actions>
+  </mat-card>
